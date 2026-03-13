@@ -1,0 +1,35 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2019-04-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "accounts_kmf_ai102_face_name": {
+      "type": "String"
+    }
+  },
+  "resources": [
+    {
+      "apiVersion": "2025-10-01-preview",
+      "identity": {
+        "type": "None"
+      },
+      "kind": "Face",
+      "location": "eastus",
+      "name": "[parameters('accounts_kmf_ai102_face_name')]",
+      "properties": {
+        "allowProjectManagement": false,
+        "customSubDomainName": "[parameters('accounts_kmf_ai102_face_name')]",
+        "networkAcls": {
+          "defaultAction": "Allow",
+          "ipRules": [],
+          "virtualNetworkRules": []
+        },
+        "publicNetworkAccess": "Enabled"
+      },
+      "sku": {
+        "name": "F0"
+      },
+      "type": "Microsoft.CognitiveServices/accounts"
+    }
+  ],
+  "variables": {}
+}

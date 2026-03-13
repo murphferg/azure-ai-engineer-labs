@@ -1,0 +1,4 @@
+python-dotenv
+Pillow
+azure-ai-vision-face
+azure-core
